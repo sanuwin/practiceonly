@@ -1,0 +1,21 @@
+body {
+    background-color: blanchedalmond;
+    color: blueviolet;
+}
+h1 {
+    color: crimson;
+}
+h2 {
+    color: chocolate;
+
+}
+h3 {
+    color: mediumvioletred;
+}
+.header {
+    text-align: center;
+}
+.footer {
+    text-align: center;
+    background-color: aqua;
+}
