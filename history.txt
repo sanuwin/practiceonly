@@ -1,0 +1,796 @@
+    1  sudo su
+    2  man sudo
+    3  sudo su
+    4  ls
+    5  exit
+    6  reboot
+    7  ls
+    8  mkdir sanu
+    9  ls
+   10  cd sanu/
+   11  touch exp1.c
+   12  cd 
+   13  ls
+   14  cd Downloads/
+   15  ls
+   16  cd
+   17  ls
+   18  cd sanu/
+   19  ls
+   20  xdg-open exp1.c 
+   21  gcc exp1.c
+   22  sudo apt install gcc
+   23  cd ..
+   24  ls
+   25  sudo apt install gcc
+   26  sudo get update
+   27  apt get update
+   28  sudo apt update
+   29  sudo apt install build-essential
+   30  ls
+   31  cd sanu/
+   32  ls
+   33  gcc exp1.c
+   34  ./a.out
+   35  cd ..
+   36  cd sanu/
+   37  ls
+   38  make clean
+   39  clean
+   40  a.out clean
+   41  clean a.out
+   42  exp1.c clean
+   43  cal
+   44  date
+   45  time
+   46  ls
+   47  rm a.out
+   48  cd
+   49  ls
+   50  cd sanu/
+   51  ls
+   52  cp exp1.c ~/Downloads/exp1.c
+   53  ls
+   54  cd ..
+   55  cd Downloads/
+   56  ls
+   57  rm exp1.c
+   58  ls
+   59  cd
+   60  cd /
+   61  ls
+   62  cd
+   63  cd sanu/
+   64  ls
+   65  mkdir youtube
+   66  ls
+   67  cd youtube/
+   68  touch txt1
+   69  ls
+   70  gedit txt1
+   71  cd
+   72  shutdown now
+   73  ls
+   74  cd D
+   75  cd Downloads/
+   76  ls
+   77  xdg-open teams_1.4.00.26453_amd64.deb 
+   78  ls
+   79  cd s
+   80  cd sanu/
+   81  ls
+   82  exit
+   83  htop
+   84  sudo apt-get install htop
+   85  htop
+   86  exit
+   87  sudo apt-get update && sudo apt-get upgrade
+   88  sudo apt-get install vim
+   89  htop
+   90  sudo apt-get install ffmpeg
+   91  exit
+   92  cd kernel-dev/qboot/
+   93  qemu-system-arm -M vexpress-a9 -nographic -kernel zImage.static -dtb vexpress-v2p-ca9.dtb -sd rootfs.img -append "console=ttyAMA0 root=/dev/mmcblk0 rw"
+   94  ls
+   95  rm -rf eworkspace/
+   96  mkdir kernel-dev
+   97  cd kernel-dev/
+   98  mkdir kbuild
+   99  cd kbuild/
+  100  cp ~/Downloads/linux-5.16.5.tar.xz .
+  101  ls
+  102  tar xvf linux-5.16.5.tar.xz 
+  103  ls
+  104  cd linux
+  105  cd linux-5.16.5/
+  106  ls
+  107  cd ../..
+  108  ls
+  109  mkdir qboot
+  110  cd qboot/
+  111  cp ~/Downloads/rootfs.img .
+  112  ls
+  113  cd ..
+  114  mkdir kprog/hello
+  115  mkdir kprog/
+  116  cd kprog/
+  117  mkdir hello
+  118  touch hello.c
+  119  vim hello.c 
+  120  vim Makefile
+  121  make -C ~/kernel-dev/kbuild/linux-5.16.4 M=$PWD modules ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+  122  sudo apt-get install qemu-system-arm
+  123  qemu-system-arm -version
+  124  sudo apt-get install gcc-arm-linux-gnueabi
+  125  sudo apt-get install libncurses5-dev
+  126  sudo apt-get install flex bison
+  127  cd ..
+  128  cd kbuild/linux-5.16.5/
+  129  make ARCH=arm mrproper
+  130  make ARCH=arm vexpress_defconfig
+  131  make ARCH
+  132  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- zImage -j 6
+  133  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- dtbs
+  134  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- modules
+  135  cd arch/arm/boot/
+  136  ls
+  137  cp zImage ~/kernel-dev/qboot/
+  138  cd dts
+  139  cp vexpress-v2p-ca9.dtb ~/kernel-dev/qboot/
+  140  cd ~/kernel-dev/kprog/hello/
+  141  make -C ~/kernel-dev/kbuild/linux-5.16.5 M=$PWD modules ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+  142  ls
+  143  cd ..
+  144  mv hello.c Makefile ~/kernel-dev/kprog/hello
+  145  ls
+  146  cd hello/
+  147  ls
+  148  make -C ~/kernel-dev/kbuild/linux-5.16.5 M=$PWD modules ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+  149  ls
+  150  cp hello.ko ~/kernel-dev/qboot/
+  151  cd ~/kernel-dev/qboot/
+  152  ls
+  153  qemu-system-arm -M vexpress-a9 -m 1024 -serial stdio -kernel zImage -dtb vexpress-v2p-ca9.dtb -sd rootfs.img -append "consloe=ttyAMA0 root=/dev/mmcblk0 rw"system-arm
+  154  rm rootfs.img 
+  155  ls
+  156  cp ~/Downloads/core-image-minimal-qemuarm.ext4 
+  157  cp ~/Downloads/core-image-minimal-qemuarm.ext4 .
+  158  ls
+  159  mv core-image-minimal-qemuarm.ext4 rootfs.img
+  160  ls
+  161  ls -alphs
+  162  qemu-system-arm -M vexpress-a9 -m 1024 -serial stdio -kernel zImage -dtb vexpress-v2p-ca9.dtb -sd rootfs.img -append "consloe=ttyAMA0 root=/dev/mmcblk0 rw"system-arm
+  163  e2fsck -f rootfs.img 
+  164  resize2fs rootfs.img 16M
+  165  qemu-system-arm -M vexpress-a9 -m 1024 -serial stdio -kernel zImage -dtb vexpress-v2p-ca9.dtb -sd rootfs.img -append "consloe=ttyAMA0 root=/dev/mmcblk0 rw"system-arm
+  166  cd ..
+  167  cd kbuild/linux-5.16.5/
+  168  cd drivers/char/
+  169  mkdir stest
+  170  cd stest/
+  171  touch hello.c
+  172  touch Makefile
+  173  vim Makefile j
+  174  ls
+  175  vim Makefile
+  176  mv hello.c sdemo.c
+  177  ls
+  178  vim sdemo.c 
+  179  vim Makefile 
+  180  cd ..
+  181  vim Makefile 
+  182  cd stest/
+  183  arm-linux-gnueabi-nm vmlinux | grep sdemo_init
+  184  cd ../..
+  185  cd ..
+  186  arm-linux-gnueabi-nm vmlinux | grep sdemo_init
+  187  arm-linux-gnueabi-objdump -t vmlinux | grep sdemo_init
+  188  arm-linux-gnueabi-nm vmlinux | grep sdemo_init
+  189  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- 
+  190  cd drivers/char/stest/
+  191  vim sdemo.c 
+  192  cd -
+  193  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- 
+  194  cd -
+  195  vim sdemo.c 
+  196  cd -
+  197  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- 
+  198  arm-linux-gnueabi-nm vmlinux | grep sdemo_init
+  199  cd -
+  200  ls
+  201  rm sdemo.c sdemo.o built-in.a 
+  202  vim sdemo.c
+  203  history
+  204  cd -
+  205  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+  206  arm-linux-gnueabi-nm vmlinux | grep sdemo_init
+  207  vim System.map 
+  208  arm-linux-gnueabi-nm vmlinux 
+  209  arm-linux-gnueabi-nm vmlinux | grep hello
+  210  arm-linux-gnueabi-objdump -t vmlinux | grep hello
+  211  cp arch/arm/boot/zImage ~/kernel-dev/qboot/zImage.static
+  212  cd -
+  213  cd ..
+  214  mkdir mtest/Kconfig
+  215  mkdir mtest/
+  216  cd mtest/
+  217  mkdir 
+  218  shutdown now
+  219  shurtdown now
+  220  shutdown now
+  221  sudo snap install whatsdesk
+  222  uninstall whatsdesk
+  223  sudo apt-get remove whatsdesk
+  224  sudo apt remove whatsdesk
+  225  sudo apt-get remove whatsdesk
+  226  sudo apt update
+  227  sudo apt-get remove whatsdesk
+  228  sudo apt-get –purge remove whatsdesk
+  229  sudo apt-get – remove whatsdesk
+  230  sudo apt-get remove whatsdesk
+  231  clear
+  232  ls
+  233  cd Desktop/
+  234  ls
+  235  mkdir helloSanu
+  236  rmdir helloSanu/
+  237  ls
+  238  cd ..
+  239  clear
+  240  ls
+  241  mdkir forntent
+  242  mkdir frontnent
+  243  ls
+  244  sudo snap install --classic code
+  245  sudo apt update
+  246  sudo apt upgrade -y
+  247  sudo apt install software-properties-common apt-transport-https wget
+  248  wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+  249  sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  250  sudo apt install code
+  251  sudo apt update && sudo apt upgrade -y
+  252  clear
+  253  shut down now
+  254  shutdown now
+  255  ls
+  256  cd frontnent/
+  257  mkdir commands
+  258  cd commands/
+  259  touch commands.txt
+  260  nanom commands.txt 
+  261  nano commands.txt 
+  262  sudo apt purge code
+  263  whatsdesk
+  264  sudo snap remove whatsdesk
+  265  ls
+  266  cd frontnent/
+  267  ls
+  268  cd commands/
+  269  ls
+  270  touch importantcommands.txt
+  271  nano importantcommands.txt 
+  272  vim
+  273  ls
+  274  nano gitCommands 
+  275  clear
+  276  cd../..
+  277  cd ../../
+  278  ls
+  279  clear
+  280  shutdown now
+  281  git config --global user.name "Sanu Kumar"
+  282  sudo apt install git
+  283  clear
+  284  git config --global user.name "Sanu Kumar"
+  285  git config --global user.email "sanukumar.15199@gmail.com"
+  286  git config --global -l
+  287  git init
+  288  ls -a
+  289  git status
+  290  clear
+  291  cd frontnent/
+  292  ls -a
+  293  git init
+  294  ls -a
+  295  git status
+  296  ls
+  297  git log
+  298  touch index.txt
+  299  git status
+  300  mkdir gitpr
+  301  cd gitpr/
+  302  git init
+  303  ls -a
+  304  clear
+  305  git status
+  306  git log
+  307  touch index.txt
+  308  git log
+  309  git status
+  310  git add index.txt 
+  311  git status
+  312  git commit -m "add index file"
+  313  git status
+  314  git log
+  315  nano index.txt 
+  316  clear
+  317  cat index.txt 
+  318  git status
+  319  git diff index.txt
+  320  git add index.txt 
+  321  git status
+  322  git commit -m "Add name"
+  323  git log
+  324  touch cutedog.txt
+  325  clear
+  326  nano cutedog.txt 
+  327  cp cutedog.txt ./
+  328  cd ..
+  329  ls
+  330  cd gitpr/
+  331  ls
+  332  rm cutedog.txt 
+  333  cd ..
+  334  ls
+  335  touch cutedog.txt
+  336  cd gitpr/
+  337  cd ..
+  338  clear
+  339  nano cutedog.txt 
+  340  cd gitpr/
+  341  cp ../cutedog.txt ./
+  342  ls
+  343  git add .
+  344  git status
+  345  git restore cutedog.txt
+  346  git status
+  347  git restore --staged cutedog.txt
+  348  git status
+  349  git commit -m "Add more information"
+  350  git status
+  351  git diff cutedog.txt
+  352  add commit .
+  353  git add .
+  354  git log
+  355  git status
+  356  touch Altcampus
+  357  ls
+  358  rm Altcampus 
+  359  touch Altcampus.txt
+  360  git status
+  361  git add .
+  362  git status
+  363  git log
+  364  git checkout a48c3cea6f2669b4f2ba8535cfc7f84a22edd2d9
+  365  ls
+  366  git checkout a48c3cea6f2669b4f2ba8535cfc7f84a22edd2d9
+  367  git status
+  368  git log
+  369  git checkout master
+  370  git log
+  371  git checkout a48c3cea6f2669b4f2ba8535cfc7f84a22edd2d9
+  372  git checkout master
+  373  git log
+  374  clear
+  375  ls
+  376  git log --oneline --decorate --graph --all
+  377  git branch dog
+  378  git log
+  379  clear
+  380  git log --oneline --decorate --graph --all
+  381  git branch sanu
+  382  git log --oneline --decorate --graph --all
+  383  git checkout dog
+  384  git log --oneline --decorate --graph --all
+  385  git add .
+  386  git commit -m "Add more information about dog"
+  387  git log --oneline --decorate --graph --all
+  388  git checkout master
+  389  git merge dog
+  390  git log --oneline --decorate --graph --all
+  391  git branch -d dog
+  392  git branch
+  393  git checkout -b hotfix-Altcampus
+  394  git commit -am "Add line beautiful"
+  395  git log --oneline --decorate --graph --all
+  396  git checkout master
+  397  git merge hotfix-Altcampus
+  398  git branch -d hotfix -d hotfix-Altcampus
+  399  git branch -d hotfix-Altcampus
+  400  git checkout
+  401  git checkout Altcampus
+  402  git merge hotfix-altcampus
+  403  git log --oneline --decorate --graph --all
+  404  git merge hotfix-sanu
+  405  clear
+  406  git remote -v
+  407  git remote add origin https://github.com/Sanu15kumar1999/helloworld.git
+  408  git remote -v
+  409  git push origin master
+  410  git config --global user.name"Sanu15kumar1999"
+  411  git config --global user.email "sanukumar.15199@gmail.com"
+  412  git config -l
+  413  git remote add origin https://github.com/Sanu15kumar1999/helloworld.git
+  414  git remote -v
+  415  git push origin master
+  416  git clone https://github.com/Sanu15kumar1999/helloworld
+  417  git push origin master
+  418  git config --global credential.helper cache
+  419  git confi --global --unset credential.helper
+  420  git config --global --unset credential.helper
+  421  git config --local --unset credential.helper
+  422  git pull -v
+  423  git clone https://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@github.com/Sanu15kumar1999/helloworld.git
+  424  git push origin master
+  425  clear
+  426  ls -al ~/.ssh
+  427  id_rsa.pub
+  428  id_ecdsa.pub
+  429  ssh-keygen -t ed25519 -c "sanukumar.15199@gmail.com"
+  430  $ ssh-keygen -t rsa -b 4096 -C "sanukumar.15199@gmail.com"
+  431  cd ../../
+  432  $ ssh-keygen -t rsa -b 4096 -C "sanukumar.15199@gmail.com"
+  433  clear
+  434  echo $PATH
+  435  ls
+  436  ls/bin/
+  437  ls /frontent/
+  438  ssh-keygen -t rsa
+  439  ssh-add
+  440  ls
+  441  cd frontnent/
+  442  ls
+  443  $ ssh-keygen -t rsa -b 4096 -C "sanukumar.15199@gmail.com"
+  444  shutdown now
+  445  git remote add origin git@github.com:Sanu15kumar1999/helloworld.git
+  446  git remote -v
+  447  git push origin master
+  448  clear
+  449  ls
+  450  cd frontnent/
+  451  ls
+  452  cd gitpr/
+  453  ls
+  454  git push origin master
+  455  git remote add origin git@github.com:Sanu15kumar1999/helloworld.git
+  456  git remote -v
+  457  git push origin master
+  458  ssh
+  459  ssh-keygen -o
+  460  cat /home/sanu/.ssh/id_rsa.pub
+  461  git push origin master
+  462  ssh-agent -s
+  463  ssh-add ~/.ssh/id_ed25519
+  464  ls -al ~/.ssh
+  465  ssh -T git@github.com
+  466  ssh -vT git@github.com
+  467  ssh -T GITHUB-Sanu15kumar1999
+  468  ssh -T GITHUB-USERNAME@github.com
+  469  ssh -T git@github.com
+  470  shutdown now
+  471  cd frontnent/
+  472  cd gitpr/
+  473  ls
+  474  git config --global user.name "Sanu15kumar1999"
+  475  git config --global user.email "sanukumar.15199@gmail.com
+  476  git config --global user.email "sanukumar.15199@gmail.com"
+  477  git config --global -l
+  478  ls
+  479  \cd frontnent/
+  480  ls
+  481  c d gitpr/
+  482  cd gitpr/
+  483  ls
+  484  git config --global user.name "Sanu15kumar1999"
+  485  git config --global user.email "sanukumar.15199@gmail.com"
+  486  git config -v
+  487  git config --global -l
+  488  git init
+  489  ls -a
+  490  shutdown now
+  491  ls
+  492  cd frontnent/
+  493  cd gitpr/
+  494  ls
+  495  git config --global user.name "sanu"
+  496  git config --global user.email "sanukumar.15199@gmail.com
+  497  git config --global user.email "sanukumar.15199@gmail.com"
+  498  git config --global -v
+  499  git config --global -r
+  500  git config --global -l
+  501  git init
+  502  git status
+  503  git add.
+  504  git add .
+  505  git status
+  506  git commit -m "New one yaar"
+  507  git remote add origin git@github.com:Sanu15kumar1999/helloworld.git
+  508  push -u origin master
+  509  git push -u origin master
+  510  cd ..
+  511  ls
+  512  touch gitPrivatelinks.txt
+  513  nano gitPrivatelinks.txt 
+  514  cd gitpr/
+  515  shutdown now
+  516  ls
+  517  cd frontnent/
+  518  cd gitpr/
+  519  ls
+  520  cd ..
+  521  cd
+  522  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  523  sudo dpkg -i google-chrome-stable_current_amd64.deb
+  524  cd frontnent/
+  525  ls
+  526  cd commands/
+  527  ls
+  528  clear
+  529  git config --global user.name "sanu kumar"
+  530  git config --global user.email "sanukumar.15199@gmail.com"
+  531  git config --global -r
+  532  git config --global -l
+  533  git init
+  534  cd ..
+  535  ls
+  536  cd Desktop/
+  537  ls
+  538  cd front/
+  539  ls
+  540  cd assignment/
+  541  ls
+  542  git init
+  543  git add .
+  544  git commit -m "Add these two assignment file"
+  545  git checkout master
+  546  git push origin mater
+  547  git push origin master
+  548  git config --global user.name "sanu kumar"
+  549  git config --global user.email "sanukumar.15199@gmail.com"
+  550  git config --global -l
+  551  git commit -m "Add these two assignment file"
+  552  git checkout master
+  553  git push origin master
+  554  git init
+  555  git remote add origin git@github.com:Sanu15kumar1999/helloworld.git
+  556  git -v
+  557  git add .
+  558  git commit -m "assignments"
+  559  git push origin master
+  560  cd assignment1
+  561  ls
+  562  git init
+  563  git add .
+  564  git commit -m "assignments"
+  565  git push origin master
+  566  git init
+  567  git remote add origin git@github.com:Sanu15kumar1999/helloworld.git
+  568  git add .
+  569  git commit -m "assignments1"
+  570  git push origin master
+  571  git config --global user.name "sanu kumar"
+  572  git config --global user.email "sanukumar.15199@gmail.com"
+  573  git init
+  574  git remote add origin git@github.com:Sanu15kumar1999/helloworld.git
+  575  git add .
+  576  git commit -m "assignments1"
+  577  git push origin master
+  578  cd ..
+  579  cd assignment2
+  580  ls
+  581  git init
+  582  git remote add origin git@github.com:Sanu15kumar1999/helloworld.git
+  583  git commit -m "assignments2"
+  584  git add .
+  585  git push origin master
+  586  git commit -m "assignments2"
+  587  git push origin master
+  588  git init
+  589  git remote add origin https://github.com/Sanu15kumar1999/helloworld.git
+  590  git add .
+  591  git commit -m "assignments2"
+  592  git add .
+  593  git commit -m "assignments2"
+  594  clear
+  595  ls
+  596  git init
+  597  git remote add origin https://github.com/Sanu15kumar1999/helloworld.git
+  598  git remote -v
+  599  git add .
+  600  git commit -m "assignment"
+  601  git push origin master
+  602  git clone git@github.com: Permission denied (publickey).
+  603  fatal: Could not read from remote repository.
+  604  git clone https://github.com/Sanu15kumar1999/helloworld.git
+  605  ls
+  606  git push origin master
+  607  ls
+  608  cd helloworld/
+  609  ls
+  610  rm helloworld/
+  611  rm dir helloworld/
+  612  rmdir helloworld/
+  613  ls
+  614  cd ..
+  615  ls
+  616  rmdir helloworld/
+  617  rmdir -r  helloworld/
+  618  rmdir -p  helloworld/
+  619  rm -r helloworld/
+  620  ls
+  621  rm -rf helloworld
+  622  ls
+  623  git clone https://github.com/Sanu15kumar1999/helloworld.git
+  624  ls
+  625  rm -rf helloworld
+  626  ls
+  627  git remote add origin https://github.com/Sanu15kumar1999/helloworld.git
+  628  git add .
+  629  git commit -m "assignment"
+  630  git clone https://github.com/Sanu15kumar1999/helloworld.git
+  631  ls
+  632  git init
+  633  git remote add origin https://github.com/Sanu15kumar1999/Assignment.git
+  634  git remote -v
+  635  git branch -M main
+  636  git push -u originmain
+  637  git push -u origin main
+  638  git remote add origin https://github.com/Sanu15kumar1999/Assignment.git
+  639  git remote -v
+  640  git branch -M main
+  641  ls
+  642  rm -rf helloworld/
+  643  git branch -M main
+  644  ls
+  645  git add .
+  646  git commit -m "assignment"
+  647  clean
+  648  clear
+  649  git remote add origin https://github.com/Sanu15kumar1999/Assignment.git
+  650  git remote -v
+  651  git remote set-url origin https://github.com/Sanu15kumar1999/Assignment.git
+  652  git remote -v
+  653  git add .
+  654  git commit -m "assignment2"
+  655  git push origin master
+  656  ls -a
+  657  git init
+  658  git add .
+  659  git commit -m "assignment2"
+  660  shutdown now
+  661  cd Desktop/
+  662  cd front/
+  663  ls
+  664  cd assignment/
+  665  ls
+  666  cd assignment2
+  667  ls
+  668  clear
+  669  ls
+  670  git init
+  671  git status
+  672  ls
+  673  git status
+  674  cd ..
+  675  git clone git@github.com:Sanu15kumar1999/Assignment.git
+  676  git clone https://github.com/Sanu15kumar1999/Assignment.git
+  677  ls
+  678  cd Assignment/
+  679  ls
+  680  code .
+  681  git status
+  682  git commit -m "assignments1"
+  683  git push origin master
+  684  git status
+  685  git add .
+  686  git commit -m "new assignment1"
+  687  git push origin master
+  688  git status
+  689  git add .
+  690  git commit -m "assignment2"
+  691  git push origin master
+  692  ls
+  693  git status
+  694  git add .
+  695  git commit -m "assignment 3"
+  696  git push origin master
+  697  shutdown now
+  698  cd Desktop/
+  699  cd front/
+  700  git init
+  701  git status
+  702  git clone https://github.com/sanuwin/practiceonly.git
+  703  ls
+  704  cd practiceonly/
+  705  git status
+  706  git add .
+  707  git commit -m "practice"
+  708  git push origin master
+  709  ls
+  710  git ststus
+  711  git status
+  712  git add .
+  713  git status
+  714  git commit -m 
+  715  git commit -m "new one practice"
+  716  git push origin master
+  717  git push origin main
+  718  shutdown now
+  719  cd Desktop/
+  720  ls
+  721  cd front/
+  722  ls
+  723  history
+  724  shutdown now
+  725  cd Desktop/
+  726  cd front/
+  727  ls
+  728  cd assignment/
+  729  ls
+  730  shutdown now
+  731  ls
+  732  cd Downloads/
+  733  ls
+  734  tar -xvf PanGPLinux.tgz 
+  735  ls
+  736  sudo apt-get install ~/Downloads/GlobalProtect_UI_deb-5.2.6.0-18.deb
+  737  sudo apt-get install GlobalProtect_UI_deb-5.2.6.0-18.deb
+  738  sudo apt-get install ~/Downloads/GlobalProtect_UI_deb-5.2.6.0-18.deb
+  739  sudo apt-get install ~/Downloads/GlobalProtect_UI_deb-5.2.6.0-18.deb
+  740  sudo dpkg -i GlobalProtect_deb-5.2.6.0-18.deb
+  741  touch commands.txt
+  742  nano commands.txt 
+  743  cd Downloads/
+  744  ls
+  745  tar -xvf PanGPLinux.tgz 
+  746  ls
+  747  sudo dpkg -i GlobalProtect_UI_deb-5.2.6.0-18.deb 
+  748  sudo apt install libqt5webkit5
+  749  sudo dpkg -i GlobalProtect_UI_deb-5.2.6.0-18.deb 
+  750  cd ..
+  751  git init
+  752  cd Desktop/
+  753  ls
+  754  cd front/
+  755  ls
+  756  cd Assignment/
+  757  ls
+  758  git status
+  759  git add .
+  760  git commit -m "assignment4"
+  761  git push origin master
+  762  shutdown now
+  763  application
+  764  apps
+  765  app
+  766  claer
+  767  clean
+  768  clr
+  769  clear
+  770  shutdown now
+  771  history
+  772  sudo dpkg -i GlobalProtect_UI_deb-5.2.6.0-18.deb 
+  773  cd Downloads/
+  774  sudo dpkg -i GlobalProtect_UI_deb-5.2.6.0-18.deb 
+  775  ls
+  776  sudo dpkg -i GlobalProtect_deb-5.2.6.0-18.deb 
+  777  whereis gp
+  778  sudo systemctl gp status
+  779  sudo systemctl status gp
+  780  sudo systemctl status global protect
+  781  sudo apt-get install  GlobalProtect_deb-5.2.6.0-18.deb 
+  782  ls
+  783  sudo apt-get install GlobalProtect_UI_deb-5.2.6.0-18.deb 
+  784  systemctl list-units --type=service
+  785  systemctl start gpd.service
+  786  systemctl stop gpd.service
+  787  sudo systemctl start gpd.service
+  788  systemctl stop gpd.service
+  789  mv GlobalProtect_UI_deb-5.2.6.0-18.deb gp
+  790  cd 
+  791  ls
+  792  sudo vim .bashrc
+  793  source .bashrc
+  794  gp
+  795  history
+  796  history >> history.txt
